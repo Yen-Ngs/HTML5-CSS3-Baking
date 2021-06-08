@@ -1,0 +1,394 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* BEM __ quy ước là con; --:modify (đặt class theo mình để chỉnh sửa cho css của người trước */
+.header{
+    background-color: #4e2a83;
+}
+.header__content{
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.header__content > a {
+    font-size: 35px;
+    font-weight: 600px;
+}
+.header__content a{
+    color: white;
+    text-decoration: none;
+}
+.header__content__navbar a{
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+.header__content a:hover{
+    color: tomato;
+}
+.header__content{
+    display: flex;
+    /* kéo tất cả thằng con lên trên 1 hàng */
+    justify-content: space-around;
+    /* chỉnh tất cả thằng con theo trục chính */
+    align-items: center;
+    /* chỉnh tất cả thằng con theo trục phụ  */
+    /* flex-direction: row; */
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images-1/b3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height:600px;
+}
+.carousel__content p{
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 600;
+}
+.carousel__content span{
+    color:#ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+}
+.carousel__content{
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+}
+.carousel__content button{
+    background-color: #e94680;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    margin: 20px;
+} 
+.statistic__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px;
+}
+.statistic__content p{
+    text-align: center;
+    color: #362276;
+    padding:20px;
+    font-size: 30px;
+}
+.statistic__content span{
+    text-align: center;
+    font-size: 10;
+    font-weight: 600;
+}
+.video{
+    max-width: 1200px;
+    margin: 50px auto;
+}
+.video__list{
+    margin:0 -10px;
+    display: flex;
+}
+.video__item{
+    width:50%;
+    padding: 0 10px;
+}
+.video__item video, .video__item iframe{
+    height:400px;
+    width:100%;
+}
+.team{
+    background-color: #4e2a83;
+}
+.team__content{
+    max-width: 1200px;
+    margin: auto;
+}
+.team__content >h1{
+    text-align: center;
+    color: #ffffff;
+    font-size:40px;
+    font-weight: 600;
+    margin: 30px 0;
+}
+.team__row{
+    display:flex;
+    flex-wrap: wrap;
+    margin:0 -15px;
+}
+.team__col{
+    width:calc(100%/3);
+    padding:0 15px;
+}
+.team__item{
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.team__item img{
+    width:100%;
+    display: block;
+}
+.team__item__infor{
+    background-color: #e94680;
+    color: #ffffff;
+    padding: 20px;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+.team__item__infor p{
+    font-size:20px;
+    margin-bottom:5px;
+}
+.team__item__overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left:0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+.team__item__overlay p:first-child{
+    color:#ff0e83;
+    font-size: 25px;
+    font-weight: 600;
+}
+.team__item__overlay span{
+    color: #ffffff;
+    display: block;
+    margin:10px 0;
+
+}
+.team__item__overlay #content1{
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 30px;
+}
+.team__item__social i{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    /* line height chi co the su dung cho dung 1 dong text */
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.team__item__social i:hover{
+    color: #ff0e83;
+    border-color: #ff0e83;
+    transition: all 0.3s ease;
+}
+.team__item--1 .team__item__overlay{
+    opacity: 0;
+    visibility: hidden;
+}
+.team__item--1:hover .team__item__overlay{
+    opacity: 1;
+    visibility: visible;
+    transition-property: all ;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transition-delay: 0.5s;
+}
+
+.team__item:hover .team__item__infor{
+    display: none;
+
+}
+.team__item--2 .team__item__overlay{
+    /* top: -100%; */
+    transform: translate(0,-100%)
+    /* tu di chuyen theo chinh ban than no */
+    
+}
+.team__item--2:hover .team__item__overlay{
+    /* top: 0; */
+    transition: all 0.5s linear;
+    transform: translate(0,0);
+}
+.team__item--3 .team__item__overlay{
+    /* top: -100%; */
+    transform: scale(0,0);
+    /* scale lay width nhan voi so dau tien height nhan voi so thu 2  */
+    /* scale dung de zoom in zoom out */
+}
+.team__item--3:hover .team__item__overlay{
+    /* top: 0; */
+    transition: all 0.5s linear;
+    transform: scale(1,1);
+}
+.team__item--4 .team__item__overlay{
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0,0);
+}
+.team__item--4:hover .team__item__overlay{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1,1) rotate(360deg)  ;
+    transition: all 0.5s linear;
+}
+.team__item--5 .team__item__overlay{
+    opacity: 0;
+    visibility: hidden;
+}
+.team__item--5:hover .team__item__overlay{
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(360deg);
+    transition: all 0.5s linear;
+}
+.contact__form form{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+}
+.contact__form__col{
+    width:100%;
+    padding: 0 15px;
+}
+.item1{
+    width:50%;
+}
+.contact >h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 20px;
+}
+.contact{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contact__form__col input[type="text"], 
+.contact__form__col input[type="number"],
+.contact__form__col input[type="email"], 
+.contact__form__col select, 
+.contact__form__col textarea{
+    display: block;
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    border-radius: 5px;
+}
+.contact button{
+    display:block;
+    background: #ff0e83;
+    width:100%;
+    color:#ffffff;
+    border:none;
+    padding:10px;
+    border-radius: 5px;
+    margin-top:20px;
+}
+.contact__form iframe{
+    width:100%;
+    margin:20px 0;
+}
+.intro{
+    display: grid;
+    /* grid-row-gap: 20px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-image: linear-gradient(to left, red ,green, blue, yellow, purple) ;
+
+    color: white;
+    
+}
+.intro__item img{
+    width:100%;
+
+}
+.intro__item--2{
+    grid-column: 2/span 2;
+}
+.intro__item--4{
+    grid-column: 1/span 2;
+    /* background-color: rgb(255, 71, 200); */
+}
+.intro__item--9{
+    grid-column: 3/span 2;
+}
+@keyframes bounce{
+    0%{
+        transform: translate(0,-300px);
+        opacity: 0;
+
+    }
+    70%{
+        transform: translate(0,100px);
+        opacity: 0.7;
+
+    }
+    100%{
+        transform: translate(0,0);
+        opacity: 1;
+
+    }
+}
+.demo{
+    background-color: #ff0e83;
+    width: 800px;
+    height:600px;
+    border-radius: 70px;
+    position: relative;
+}
+.ball{
+    width:140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: ball 5s linear infinite;
+
+}
+.ball:hover{
+    animation-play-state: paused;
+}
+@keyframes ball{
+    0%{
+        top: 0;
+        left: 0;
+
+    }
+    25%{
+        left: 0;
+        top:calc(100% - 140px);
+
+    }
+    50%{
+        top:calc(100% - 140px);
+        left: calc(100% - 140px);
+
+
+    }
+    75%{
+        top: 0;
+        left: calc(100% - 140px);
+
+    }
+    100%{
+        top: 0;
+        left: 0;
+    }
+}
